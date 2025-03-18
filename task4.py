@@ -27,8 +27,7 @@ class MacOS(OperatingSystem):
         base_info = super().__str__()  # Используем метод родительского класса
         return f"{base_info}, Apple Silicon: {'Yes' if self.apple_silicon else 'No'}"
 
-    def __repr__(self) -> str:
-        return f"MacOS(name={self.name!r}, version={self.version!r}, release_year={self.release_year!r}, apple_silicon={self.apple_silicon!r})"
+    # Метод __repr__ не перегружается, он наследуется из родительского класса
 
     def get_info(self) -> str:
         base_info = super().get_info()  # Используем метод родительского класса
@@ -41,7 +40,7 @@ class MacOS(OperatingSystem):
 
 
 # Пример использования
-if name == "__main__":
+if __name__ == "__main__":
     # Создаем объект базового класса
     os_base = OperatingSystem("Linux", "5.15", 2021)
     print(os_base)  # Выводит: Linux 5.15 (2021)
@@ -51,7 +50,7 @@ if name == "__main__":
     # Создаем объект дочернего класса
     os_mac = MacOS("MacOS", "Monterey", 2021, True)
     print(os_mac)  # Выводит: MacOS Monterey (2021), Apple Silicon: Yes
-    print(repr(os_mac))  # Выводит: MacOS(name='MacOS', version='Monterey', release_year=2021, apple_silicon=True)
+    print(repr(os_mac))  # Выводит: OperatingSystem(name='MacOS', version='Monterey', release_year=2021)
     print(os_mac.get_info())  # Выводит: OS: MacOS, Version: Monterey, Released: 2021, Apple Silicon Support: Yes
     print(os_mac.check_compatibility("Apple Silicon"))  # Выводит: True
 
