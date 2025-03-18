@@ -77,3 +77,4 @@ print(paper_book)  # Бумажная книга 1984. Автор George Orwell.
 
 audio_book = AudioBook("1984", "George Orwell", 11.5)
 print(audio_book)  # Аудиокнига 1984. Автор George Orwell. Продолжительность: 11.5 часов
+
